@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+/* Universal Selector (means apply to everything) */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /*<- this means take up the entire height of browser */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    border-image-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;  /* <- when we click the image, we want it to have a transition. */
+
+}
+
+.panel h3{
+    font-size: 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s; /* <- how the text will appear when we click the image*/
+}
+
+@media (max-width:480px) {  /* <- this will work when screen size is smaller than 480px(small screens).*/
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),    /*The :nth-of-type(n) selector matches every element that is the nth child, of the same type (tag name), of its parent.*/
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+

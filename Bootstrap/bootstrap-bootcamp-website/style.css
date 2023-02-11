@@ -1,0 +1,15 @@
+/* To give space between navbar and the first section, since navbar is fixed, it overlap on first section. */
+body::before{
+    display: block;
+    content: '';
+    height: 50px;
+    
+}
+
+/* Making newsletter input group half of its size, on bigger than medium screen. */
+
+@media(min-width: 768px){
+    .news-input{
+        width: 50%;
+    }
+}
